@@ -1,22 +1,13 @@
-import React, { useState } from 'react';
-import AddImageIcon from './components/AddImageIcon';
-import ImageGallery from './components/ImageGallery';
-import './styles.css';
+import React from 'react';
+import ImageGallery from './components/ImageGallery'
+import "./style.css"
 
-const App = () => {
-  const [images, setImages] = useState([]);
-
-  const handleImageUpload = (imageUrl) => {
-    setImages((prevImages) => [...prevImages, imageUrl]);
-  };
-
-  return (
-    <div className="App">
-      <h1>Image Gallery</h1>
-      <AddImageIcon onImageUpload={handleImageUpload} />
-      <ImageGallery images={images} />
-    </div>
-  );
-};
+function App() {
+    return (
+        <div className="App">
+            <ImageGallery />
+        </div>
+    );
+}
 
 export default App;
