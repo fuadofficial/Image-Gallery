@@ -1,10 +1,12 @@
-import React, { useState,useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import '../styles/AddImageIcon.css'; // Assuming you have a CSS file for styling
 
 const AddImageIcon = ({ onImageUpload }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [imagePreview, setImagePreview] = useState(null);
-    const fileInputRef = useRef(null); // Ref for file input
+    const [uploading, setUploading] = useState(false); // For upload animation
+    const fileInputRef = useRef(null);
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -22,6 +24,8 @@ const AddImageIcon = ({ onImageUpload }) => {
         const formData = new FormData();
         formData.append('image', selectedFile);
 
+        setUploading(true); // Start uploading animation
+
         try {
             const response = await axios.post('http://localhost:5000/api/image/upload', formData);
             onImageUpload(response.data.imageUrl);
@@ -33,24 +37,27 @@ const AddImageIcon = ({ onImageUpload }) => {
             }
         } catch (error) {
             console.error('Error uploading image:', error);
+        } finally {
+            setUploading(false); // End uploading animation
         }
     };
 
     return (
-        <div class="upload-container">
-            <label class="custom-file-input">
-                <input type="file" ref={fileInputRef} accept="image/*" onChange={handleFileChange} />
+        <div className="upload-container">
+            <label className="custom-file-input">
+                <input type="file" accept="image/*" onChange={handleFileChange} />
                 Choose Image
             </label>
-            <span class="file-name">{selectedFile ? selectedFile.name : "No file selected"}</span>
+            <span className="file-name">{selectedFile ? selectedFile.name : "No file selected"}</span>
             {imagePreview && (
                 <div className="image-preview">
                     <img src={imagePreview} alt="Selected Preview" />
                 </div>
             )}
-            <button onClick={handleUpload}>Add Image</button>
+            <button onClick={handleUpload} disabled={uploading}>
+                {uploading ? 'Uploading...' : 'Add Image'}
+            </button>
         </div>
-
     );
 };
 

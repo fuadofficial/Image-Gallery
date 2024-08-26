@@ -6,22 +6,22 @@
   font-family: 'Arial', sans-serif;
 }
 
+/* Gallery Styling */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* Center the gallery */
   gap: 15px;
-  /* Increased gap for a cleaner look */
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  /* Smooth transition for hover effects */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s forwards;
 }
 
-/* Responsive Image Styling */
 .gallery img {
   width: 100%;
   max-width: 200px;
@@ -32,15 +32,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover Effects */
 .gallery img:hover {
   transform: scale(1.05);
-  /* Slight zoom effect on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  /* Enhanced shadow on hover */
 }
 
-/* Responsive Design */
+/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .gallery img {
     max-width: 150px;
@@ -57,13 +54,6 @@
     max-width: 100px;
     height: 80px;
   }
-}
-
-/* Animation for Gallery Container */
-.gallery {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.6s forwards;
 }
 
 /* Keyframes for Fade-in Animation */
@@ -90,21 +80,17 @@ button:hover {
 }
 
 /* Upload Section Styles */
-/* Upload Section Styles */
 .upload-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
-/* File Input Styling */
 .upload-container input[type="file"] {
   display: none;
-  /* Hide the default file input */
 }
 
-/* Custom File Input Label */
 .custom-file-input {
   display: inline-block;
   padding: 10px 20px;
@@ -120,24 +106,22 @@ button:hover {
   background-color: #0056b3;
 }
 
-/* Display Selected File Name */
 .file-name {
-  margin-top: 10px;
+  margin-left: 10px;
   font-size: 14px;
   color: #333;
   font-style: italic;
 }
 
-/* Image Preview Styling */
+/* Updated Image Preview Styling */
 .image-preview {
-  margin-top: 15px;
-  max-width: 100%;
+  margin-left: 15px;
+  max-width: 50px;
   text-align: center;
 }
 
 .image-preview img {
-  max-width: 50px;
-  /* Adjust based on your preference */
+  width: 100%;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -151,7 +135,7 @@ button:hover {
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 15px;
+  margin-left: 20px;
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
@@ -162,10 +146,89 @@ button:hover {
 
 /* Responsive Design for Upload Section */
 @media (max-width: 480px) {
+  .upload-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .custom-file-input,
-  .upload-container button {
+  .upload-container button,
+  .image-preview {
     width: 100%;
     text-align: center;
+    margin: 10px 0;
   }
+
+  .image-preview {
+    margin-left: 0;
+  }
+}
+
+/* Modal Styles */
+/* Modal Animation */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInModal 0.5s forwards;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  max-width: 80%;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.modal-content.deleting {
+  animation: deletingAnimation 0.5s forwards;
+}
+
+@keyframes fadeInModal {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes deletingAnimation {
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+/* Upload Button Animation */
+.upload-container button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.upload-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.upload-container button:hover:not(:disabled) {
+  background-color: #218838;
+  transform: scale(1.05);
 }
