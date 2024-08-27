@@ -1,292 +1,293 @@
 /* General Styles */
 .App {
-  text-align: center;
-  padding: 20px;
-  background-color: #f0f0f0;
-  font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
 }
 
 /* Gallery Styling */
 .galler-container h2 {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 0.6s forwards;
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s forwards;
 }
 
 .gallery img {
-  width: 100%;
-  max-width: 200px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .gallery img {
-    max-width: 150px;
-    height: 120px;
-  }
+    .gallery img {
+        max-width: 150px;
+        height: 120px;
+    }
 }
 
 @media (max-width: 480px) {
-  .gallery {
-    gap: 10px;
-  }
+    .gallery {
+        gap: 10px;
+    }
 
-  .gallery img {
-    max-width: 100px;
-    height: 80px;
-  }
+    .gallery img {
+        max-width: 100px;
+        height: 80px;
+    }
 }
 
 /* Keyframes for Fade-in Animation */
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* General Styles for Upload Section */
 .upload-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  justify-content: center;
-  position: relative;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    justify-content: center;
+    position: relative;
+    gap: 20px;
 }
 
 .upload-container input[type="file"] {
-  display: none;
+    display: none;
 }
 
 .upload-container-input {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .custom-file-input {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  font-size: 16px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
 }
 
 .custom-file-input:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .file-name {
-  width: 100px;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #333;
-  font-style: italic;
+    width: 100px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
 }
 
 /* Updated Image Preview Styling */
 .image-preview {
-  margin-top: 15px;
-  max-width: 50px;
-  text-align: center;
+    margin-top: 15px;
+    max-width: 50px;
+    text-align: center;
 }
 
 .image-preview img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Button Styling for Upload */
 .button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .upload-container button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin: 10px 0;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px 0;
 }
 
 .upload-container button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .upload-container button:hover:not(:disabled) {
-  background-color: #218838;
-  transform: scale(1.05);
+    background-color: #218838;
+    transform: scale(1.05);
 }
 
 /* Progress Bar Styles */
 .progress-bar-container {
-  width: 90%;
-  background-color: #f10000;
-  border-radius: 10px;
-  height: 5px;
-  margin: 15px auto;
-  position: relative;
+    width: 90%;
+    background-color: #f10000;
+    border-radius: 10px;
+    height: 5px;
+    margin: 15px auto;
+    position: relative;
 }
 
 .progress-bar {
-  height: 100%;
-  border-radius: 10px;
-  background-color: #ffff00;
-  background: linear-gradient(90deg, #28a745 0%, #4caf50 100%);
-  background-size: 200% 100%;
-  animation: progressAnimation 1s linear infinite;
-  transition: width 0.4s ease;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #ffff00;
+    background: linear-gradient(90deg, #28a745 0%, #4caf50 100%);
+    background-size: 200% 100%;
+    animation: progressAnimation 1s linear infinite;
+    transition: width 0.4s ease;
 }
 
 @keyframes progressAnimation {
-  0% {
-    background-position: 0% 0%;
-  }
+    0% {
+        background-position: 0% 0%;
+    }
 
-  100% {
-    background-position: 100% 0%;
-  }
+    100% {
+        background-position: 100% 0%;
+    }
 }
 
 /* Responsive Design for Upload Section */
 @media (max-width: 480px) {
-  .upload-container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .upload-container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .custom-file-input,
-  .upload-container button,
-  .image-preview {
-    width: 100%;
-    text-align: center;
-    margin: 10px 0;
-  }
+    .custom-file-input,
+    .upload-container button,
+    .image-preview {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
 
-  .image-preview {
-    margin-left: 0;
-  }
+    .image-preview {
+        margin-left: 0;
+    }
 }
 
 /* Modal Styles */
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  opacity: 0;
-  animation: fadeInModal 0.5s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInModal 0.5s forwards;
 }
 
 .modal-content {
-  background-color: #ffffff;
-  padding: 35px 25px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  position: relative;
-  max-width: 80%;
-  transform: scale(0.9);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+    background-color: #ffffff;
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    max-width: 80%;
+    transform: scale(0.9);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .modal-content img {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
-  border-radius: 8px;
-  margin-bottom: 15px;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .modal-content.deleting {
-  animation: deletingAnimation 0.5s forwards;
+    animation: deletingAnimation 0.5s forwards;
 }
 
 @keyframes fadeInModal {
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes deletingAnimation {
-  to {
-    opacity: 0;
-    transform: scale(0.8);
-  }
+    to {
+        opacity: 0;
+        transform: scale(0.8);
+    }
 }
 
 /* Close Button Styling */
 .modal .close {
-  position: absolute;
-  top: -10px;
-  right: 15px;
-  font-size: 50px;
-  cursor: pointer;
-  color: #333;
-  transition: color 0.3s ease;
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    font-size: 50px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
 }
 
 .modal .close:hover {
-  color: #ff0000;
+    color: #ff0000;
 }
 
 /* Delete Button Styling */
 .modal .delete-btn {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .modal .delete-btn:hover {
-  background-color: #c82333;
-  transform: scale(1.05);
+    background-color: #c82333;
+    transform: scale(1.05);
 }
