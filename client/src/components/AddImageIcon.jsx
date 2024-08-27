@@ -53,9 +53,16 @@ const AddImageIcon = ({ onImageUpload }) => {
                     <img src={imagePreview} alt="Selected Preview" />
                 </div>
             )}
-            <button onClick={handleUpload} disabled={uploading}>
-                {uploading ? 'Uploading...' : 'Add Image'}
-            </button>
+            <div className="button-container">
+                <button onClick={handleUpload} disabled={uploading}>
+                    {uploading ? 'Uploading...' : 'Add Image'}
+                </button>
+                {uploading && (
+                    <div className="progress-bar-container progress-bar-show">
+                        <div className="progress-bar"></div>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

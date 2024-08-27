@@ -7,7 +7,6 @@
 }
 
 /* Gallery Styling */
-
 .galler-container h2 {
   font-size: 30px;
 }
@@ -70,12 +69,14 @@
   }
 }
 
-/* Upload Section Styles */
+/* General Styles for Upload Section */
 .upload-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 120px;
+  height: auto;
   justify-content: center;
+  position: relative;
 }
 
 .upload-container input[type="file"] {
@@ -99,7 +100,7 @@
 }
 
 .file-name {
-  margin-left: 10px;
+  margin-top: 10px;
   font-size: 14px;
   color: #333;
   font-style: italic;
@@ -107,7 +108,7 @@
 
 /* Updated Image Preview Styling */
 .image-preview {
-  margin-left: 15px;
+  margin-top: 15px;
   max-width: 50px;
   text-align: center;
 }
@@ -120,6 +121,12 @@
 }
 
 /* Button Styling for Upload */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .upload-container button {
   background-color: #28a745;
   color: white;
@@ -127,9 +134,9 @@
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: 20px;
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px;
 }
 
 .upload-container button:disabled {
@@ -140,6 +147,37 @@
 .upload-container button:hover:not(:disabled) {
   background-color: #218838;
   transform: scale(1.05);
+}
+
+/* Progress Bar Styles */
+.progress-bar-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  height: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+  position: relative;
+  display: block;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #ffff00;
+  background: linear-gradient(90deg, #28a745 0%, #4caf50 100%);
+  background-size: 200% 100%;
+  animation: progressAnimation 1s linear infinite;
+  transition: width 0.4s ease;
+}
+
+@keyframes progressAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
 }
 
 /* Responsive Design for Upload Section */
