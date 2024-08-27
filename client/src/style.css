@@ -7,6 +7,11 @@
 }
 
 /* Gallery Styling */
+
+.galler-container h2 {
+  font-size: 30px;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -30,6 +35,7 @@
   border-radius: 8px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .gallery img:hover {
@@ -64,26 +70,11 @@
   }
 }
 
-/* Button Styling */
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
 /* Upload Section Styles */
 .upload-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  height: 120px;
   justify-content: center;
 }
 
@@ -98,12 +89,13 @@ button:hover {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   font-size: 16px;
 }
 
 .custom-file-input:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .file-name {
@@ -137,11 +129,17 @@ button:hover {
   cursor: pointer;
   margin-left: 20px;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.upload-container button:hover {
+.upload-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.upload-container button:hover:not(:disabled) {
   background-color: #218838;
+  transform: scale(1.05);
 }
 
 /* Responsive Design for Upload Section */
@@ -165,7 +163,6 @@ button:hover {
 }
 
 /* Modal Styles */
-/* Modal Animation */
 .modal {
   display: flex;
   justify-content: center;
@@ -183,14 +180,22 @@ button:hover {
 
 .modal-content {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 35px 25px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
   max-width: 80%;
   transform: scale(0.9);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 
 .modal-content.deleting {
@@ -210,25 +215,33 @@ button:hover {
   }
 }
 
-/* Upload Button Animation */
-.upload-container button {
-  background-color: #28a745;
+/* Close Button Styling */
+.modal .close {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  font-size: 50px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+  color: #ff0000;
+}
+
+/* Delete Button Styling */
+.modal .delete-btn {
+  background-color: #dc3545;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: 20px;
-  font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.upload-container button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.upload-container button:hover:not(:disabled) {
-  background-color: #218838;
+.modal .delete-btn:hover {
+  background-color: #c82333;
   transform: scale(1.05);
 }

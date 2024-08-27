@@ -6,7 +6,6 @@ const ImageGallery = () => {
     const [images, setImages] = useState([]);
     const [selectedImage, setSelectedImage] = useState(null);
 
-    // Fetch images from the server when the component mounts
     useEffect(() => {
         fetchImages();
     }, []);
@@ -34,7 +33,10 @@ const ImageGallery = () => {
 
     const handleDeleteImage = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/image/delete`, { data: { imageUrl: selectedImage } });
+            await axios.delete('http://localhost:5000/api/image/delete', {
+                headers: { 'Content-Type': 'application/json' },
+                data: { imageUrl: selectedImage }
+            });
             setImages(images.filter(image => image !== selectedImage));
             setSelectedImage(null);
         } catch (error) {
@@ -43,7 +45,7 @@ const ImageGallery = () => {
     };
 
     return (
-        <div>
+        <div className='gallery-container'>
             <h2>Image Gallery</h2>
             <AddImageIcon onImageUpload={handleImageUpload} />
             <div className="gallery">
@@ -57,7 +59,7 @@ const ImageGallery = () => {
                     />
                 ))}
             </div>
-            
+
             {selectedImage && (
                 <div className="modal">
                     <div className="modal-content">

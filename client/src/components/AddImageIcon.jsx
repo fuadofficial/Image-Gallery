@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
-import '../styles/AddImageIcon.css'; // Assuming you have a CSS file for styling
 
 const AddImageIcon = ({ onImageUpload }) => {
     const [selectedFile, setSelectedFile] = useState(null);
