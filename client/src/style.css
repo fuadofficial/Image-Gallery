@@ -77,10 +77,17 @@
   height: auto;
   justify-content: center;
   position: relative;
+  gap: 20px;
 }
 
 .upload-container input[type="file"] {
   display: none;
+}
+
+.upload-container-input {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .custom-file-input {
@@ -100,6 +107,7 @@
 }
 
 .file-name {
+  width: 100px;
   margin-top: 10px;
   font-size: 14px;
   color: #333;
@@ -136,7 +144,7 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .upload-container button:disabled {
@@ -151,18 +159,17 @@
 
 /* Progress Bar Styles */
 .progress-bar-container {
-  width: 100%;
-  background-color: #f0f0f0;
-  border-radius: 5px;
+  width: 90%;
+  background-color: #f10000;
+  border-radius: 10px;
   height: 5px;
-  overflow: hidden;
-  margin-top: 10px;
+  margin: 15px auto;
   position: relative;
-  display: block;
 }
 
 .progress-bar {
   height: 100%;
+  border-radius: 10px;
   background-color: #ffff00;
   background: linear-gradient(90deg, #28a745 0%, #4caf50 100%);
   background-size: 200% 100%;
