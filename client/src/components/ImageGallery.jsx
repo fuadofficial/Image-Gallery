@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddImageIcon from "../components/AddImageIcon";
 
@@ -12,7 +12,7 @@ const ImageGallery = () => {
 
     const fetchImages = async () => {
         try {
-            const response = await axios.get('https://image-gallery-server-six.vercel.app');
+            const response = await axios.get('https://image-gallery-server-six.vercel.app/api/image');
             setImages(response.data.images);
         } catch (error) {
             console.error('Error fetching images:', error);
