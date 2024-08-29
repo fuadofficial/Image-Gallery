@@ -33,7 +33,7 @@ const ImageGallery = () => {
 
     const handleDeleteImage = async () => {
         try {
-            await axios.delete('http://localhost:5000/api/image/delete', {
+            await axios.delete('https://image-gallery-server-six.vercel.app/api/image/delete', {
                 headers: { 'Content-Type': 'application/json' },
                 data: { imageUrl: selectedImage }
             });
