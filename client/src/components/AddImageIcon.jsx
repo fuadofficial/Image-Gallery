@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import  { useState, useRef } from 'react';
 import axios from 'axios';
 
 const AddImageIcon = ({ onImageUpload }) => {
@@ -26,7 +26,7 @@ const AddImageIcon = ({ onImageUpload }) => {
         setUploading(true);
 
         try {
-            const response = await axios.post('https://image-gallery-server-six.vercel.app/api/image/upload', formData);
+            const response = await axios.post('http://localhost:5000/api/image/upload', formData);
             onImageUpload(response.data.imageUrl);
 
             setSelectedFile(null);

@@ -12,7 +12,7 @@ const ImageGallery = () => {
 
     const fetchImages = async () => {
         try {
-            const response = await axios.get('https://image-gallery-server-six.vercel.app/api/image');
+            const response = await axios.get('http://localhost:5000/api/image');
             setImages(response.data.images);
         } catch (error) {
             console.error('Error fetching images:', error);
@@ -33,7 +33,7 @@ const ImageGallery = () => {
 
     const handleDeleteImage = async () => {
         try {
-            await axios.delete('https://image-gallery-server-six.vercel.app/api/image/delete', {
+            await axios.delete('http://localhost:5000/api/image/delete', {
                 headers: { 'Content-Type': 'application/json' },
                 data: { imageUrl: selectedImage }
             });
