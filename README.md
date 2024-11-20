@@ -1,3 +1,23 @@
+
+![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_29_14%20PM.png?raw=true)
+
+
+
+
+![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_29_38%20PM.png?raw=true)
+
+
+
+
+![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_29_48%20PM.png?raw=true)
+
+
+
+![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_30_59%20PM.png?raw=true)
+
+
+
+
 🖼️ Image Gallery Application
 📋 Overview
 This Image Gallery application is built with React, Express, and Node.js. It allows users to upload and delete images, with all files stored securely on the server-side.
@@ -36,24 +56,6 @@ Designed a clean, responsive, and user-friendly interface.
 📽️ Video Demonstration
 Watch the LinkedIn video to see the application in action and explore its features!
 
-
-
-
-![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_29_14%20PM.png?raw=true)
-
-
-
-
-![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_29_38%20PM.png?raw=true)
-
-
-
-
-![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_29_48%20PM.png?raw=true)
-
-
-
-![image alt](https://github.com/fuadofficial/Image-Gallery/blob/master/Vite%20+%20React%20-%20Google%20Chrome%208_31_2024%209_30_59%20PM.png?raw=true)
 
 
 
